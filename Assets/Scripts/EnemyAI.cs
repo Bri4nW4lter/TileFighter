@@ -12,10 +12,12 @@ public class EnemyAI : MonoBehaviour {
     public GameObject firstTile;
     TileScript currentTile;
     int direction;
+    int attacks;
     public float EnemySpeed = 0.4f;
     public float defSpeed;
     public float AttackSpeed = 1.0f;
     public EnemyAttacks enemyAttacks;
+
 
 
     // Use this for initialization
@@ -65,9 +67,18 @@ public class EnemyAI : MonoBehaviour {
 
         if (direction == 4)
         {
-            Debug.Log("Attack");
-            EnemySpeed = AttackSpeed;
-            enemyAttacks.FireCross();
+            attacks = Random.Range(0, 2);
+            if(attacks == 0)
+            {
+                Debug.Log("Attack");
+                EnemySpeed = AttackSpeed;
+            }
+            if(attacks == 1)
+            {
+                Debug.Log("Attack");
+                EnemySpeed = AttackSpeed;
+                enemyAttacks.FireCross();
+            } 
         }
 
         Move();

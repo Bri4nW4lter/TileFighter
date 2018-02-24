@@ -24,7 +24,7 @@ public class EnemyAttacks : MonoBehaviour {
     }
     public void FireCross()
     {
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < 5; i++)
         {
             Instantiate(FireObject, CrossTiles[i].transform.position, CrossTiles[i].transform.rotation);
             DestroyFireDelayed();
