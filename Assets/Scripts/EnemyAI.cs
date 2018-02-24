@@ -19,8 +19,6 @@ public class EnemyAI : MonoBehaviour {
     public EnemyAttacks enemyAttacks;
     public Material hatMaterial;
 
-
-
     // Use this for initialization
     void Start () {
         GetComponent<EnemyAttacks>();
@@ -77,8 +75,8 @@ public class EnemyAI : MonoBehaviour {
             attacks = Random.Range(0, 2);
             if(attacks == 0)
             {
-                Debug.Log("Attack01");
-                
+                enemyAttacks.LightningStrike();
+                Debug.Log("LightningStrike");               
             }
 
             if(attacks == 1)
