@@ -68,19 +68,7 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         //Move to Position of the Tile
-
-       /* GetComponent<Rigidbody>().velocity = Vector3.zero;
-        GetComponent<Rigidbody>().angularVelocity = new Vector3(0f, 0f, 0f);            //reset rigidbody incase it gets messed up in some way
-        transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));*/
-
         transform.position = finalTile.transform.position;
         currentTile = finalTile;
-
-
-
-
-
-        Debug.Log(currentTile.transform.position);
-
     }
 }
