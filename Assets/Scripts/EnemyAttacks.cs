@@ -5,8 +5,7 @@ using UnityEngine;
 public class EnemyAttacks : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
-		
+	void Start () {		
 	}
 	
 	// Update is called once per frame
@@ -16,7 +15,9 @@ public class EnemyAttacks : MonoBehaviour {
 
     public GameObject[] CrossTiles;
     public GameObject FireObject;
+    public GameObject WarningObject;
     public float DeleteTime = 0.5f;
+    public float DelayTime = 0.4f;
 
     private void DestroyFireDelayed()
     {
@@ -25,10 +26,21 @@ public class EnemyAttacks : MonoBehaviour {
         {
             GameObject.Destroy(target, DeleteTime);
         }
-      
     }
-    
+   
+   
+
     public void FireCross()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            Instantiate(WarningObject, CrossTiles[i].transform.position, CrossTiles[i].transform.rotation);
+           
+        }
+        Invoke("FireCrossAttack", DelayTime);
+    }
+
+    public void FireCrossAttack()
     {
         for (int i = 0; i < 5; i++)
         {
@@ -36,7 +48,6 @@ public class EnemyAttacks : MonoBehaviour {
             DestroyFireDelayed();
         }
     }
-
 
 
 }
