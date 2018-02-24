@@ -13,4 +13,24 @@ public class EnemyAttacks : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public GameObject[] CrossTiles;
+    public GameObject FireObject;
+    public float DeleteTime = 0.5f;
+
+    private void DestroyFireDelayed()
+    {
+        Destroy(FireObject, DeleteTime);
+    }
+    public void FireCross()
+    {
+        for (int i = 0; i < 6; i++)
+        {
+            Instantiate(FireObject, CrossTiles[i].transform.position, CrossTiles[i].transform.rotation);
+            DestroyFireDelayed();
+        }
+    }
+
+
+
 }
