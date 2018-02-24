@@ -15,11 +15,12 @@ public class EnemyAI : MonoBehaviour {
     public float EnemySpeed = 0.4f;
     public float defSpeed;
     public float AttackSpeed = 1.0f;
-    EnemyAttacks enemyAttacks;
+    public EnemyAttacks enemyAttacks;
 
 
     // Use this for initialization
     void Start () {
+        GetComponent<EnemyAttacks>();
         FindFirstTile();
         defSpeed = EnemySpeed;
         StartCoroutine("Interval");
