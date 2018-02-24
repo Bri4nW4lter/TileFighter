@@ -67,16 +67,15 @@ public class EnemyAI : MonoBehaviour {
 
         if (direction == 4)
         {
+            EnemySpeed = AttackSpeed;
             attacks = Random.Range(0, 2);
             if(attacks == 0)
             {
-                Debug.Log("Attack");
-                EnemySpeed = AttackSpeed;
+                Debug.Log("Attack01");
             }
             if(attacks == 1)
             {
-                Debug.Log("Attack");
-                EnemySpeed = AttackSpeed;
+                Debug.Log("FireCrossAttack!");
                 enemyAttacks.FireCross();
             } 
         }

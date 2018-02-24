@@ -20,8 +20,14 @@ public class EnemyAttacks : MonoBehaviour {
 
     private void DestroyFireDelayed()
     {
-        Destroy(FireObject, DeleteTime);
+        GameObject[] fireToDestroy = GameObject.FindGameObjectsWithTag("FireAttack");
+        foreach(GameObject target in fireToDestroy)
+        {
+            GameObject.Destroy(target, DeleteTime);
+        }
+      
     }
+    
     public void FireCross()
     {
         for (int i = 0; i < 5; i++)
