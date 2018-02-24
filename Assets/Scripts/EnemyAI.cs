@@ -6,18 +6,24 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-        FindFirstTile();
-        StartCoroutine("Interval");
-    }
+
 
     public TileScript startingTile;
     public GameObject firstTile;
     TileScript currentTile;
     int direction;
-    public float EnemySpeed = 0.5f;
+    public float EnemySpeed = 0.3f;
+    public float defSpeed;
+    public float AttackSpeed = 1.0f;
 
+
+    // Use this for initialization
+    void Start () {
+        FindFirstTile();
+        defSpeed = EnemySpeed;
+        StartCoroutine("Interval");
+
+    }
   
 
      void FindFirstTile()
@@ -28,9 +34,13 @@ public class EnemyAI : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-      // InvokeRepeating("EnemyBehavior", 1.5f, 2.0f);
+      
 	}
 
+    void ResetSpeed()
+    {
+        EnemySpeed = defSpeed;
+    }
 
     IEnumerator Interval()
     {
@@ -38,6 +48,8 @@ public class EnemyAI : MonoBehaviour {
 
         while(true)
         {
+            ResetSpeed();
+
             EnemyBehavior();
             yield return new WaitForSeconds(EnemySpeed);
         }
@@ -47,8 +59,16 @@ public class EnemyAI : MonoBehaviour {
 
     void EnemyBehavior()
     {
-        direction = Random.Range(0, 4);
+        direction = Random.Range(0, 5);
+
+        if (direction == 4)
+        {
+            Debug.Log("Attack");
+            EnemySpeed = AttackSpeed;
+        }
+
         Move();
+        
 
     }
 
