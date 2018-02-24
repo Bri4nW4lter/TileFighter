@@ -1178,7 +1178,7 @@ MonoBehaviour:
   - {fileID: 2022942227}
   LightningObject: {fileID: 1503965998770368, guid: 1ff535cf2b1e8cb4ea80edffb7734a7f,
     type: 2}
-  LightningWarning: {fileID: 1645808667039450, guid: 358649585ddb90e4e856006d448aa276,
+  LightningWarning: {fileID: 1645808667039450, guid: 6dec07aa7580c4f40b03d6cb5a7bedf9,
     type: 2}
   LDelayTime: 0.4
   WaitBetweenStrikes: 0.5

@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: FireWarning
+  m_Name: Warning Mat
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
@@ -72,5 +72,5 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.99264705, g: 0.27005842, b: 0.27005842, a: 1}
-    - _EmissionColor: {r: 0.7352941, g: 0.41313684, b: 0.0054065795, a: 1}
+    - _Color: {r: 0.9485294, g: 0.27200472, b: 0.27200472, a: 1}
+    - _EmissionColor: {r: 0.7794118, g: 0.33864102, b: 0, a: 1}
