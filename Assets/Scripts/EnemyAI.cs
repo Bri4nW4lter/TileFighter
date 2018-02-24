@@ -17,6 +17,7 @@ public class EnemyAI : MonoBehaviour {
     public float defSpeed;
     public float AttackSpeed = 1.0f;
     public EnemyAttacks enemyAttacks;
+    public Material hatMaterial;
 
 
 
@@ -59,7 +60,12 @@ public class EnemyAI : MonoBehaviour {
         }
     }
 
-    
+    void HatChangeColor(Color color)
+    {
+        hatMaterial.color = color;
+    }
+
+
 
     void EnemyBehavior()
     {
@@ -72,10 +78,12 @@ public class EnemyAI : MonoBehaviour {
             if(attacks == 0)
             {
                 Debug.Log("Attack01");
+                HatChangeColor(Color.black);
             }
             if(attacks == 1)
             {
                 Debug.Log("FireCrossAttack!");
+                HatChangeColor(Color.red);
                 enemyAttacks.FireCross();
             } 
         }
