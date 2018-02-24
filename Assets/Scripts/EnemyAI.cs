@@ -78,12 +78,13 @@ public class EnemyAI : MonoBehaviour {
             if(attacks == 0)
             {
                 Debug.Log("Attack01");
-                HatChangeColor(Color.black);
+                
             }
+
             if(attacks == 1)
             {
-                Debug.Log("FireCrossAttack!");
                 HatChangeColor(Color.red);
+                Debug.Log("FireCrossAttack!");
                 enemyAttacks.FireCross();
             } 
         }
@@ -95,6 +96,8 @@ public class EnemyAI : MonoBehaviour {
 
     private void Move()
     {
+        
+
         TileScript finalTile = null;            //tile we want to arrive at
         
         if (currentTile == null)
@@ -111,6 +114,7 @@ public class EnemyAI : MonoBehaviour {
             return;
         }
 
+        HatChangeColor(Color.black);
         //Move to Position of the Tile
         transform.position = finalTile.transform.position;
         currentTile = finalTile;
