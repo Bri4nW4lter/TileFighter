@@ -15,8 +15,8 @@ public class BurstAttackScript : MonoBehaviour {
 
     public float BDelayTime = 0.4f;
     public float WarningDeleteTime = 0.2f;
-    public float BDeleteTime = 1.0f;
-    public float WaitBetweenBursts = 0.9f;
+    public float BDeleteTime = 0.7f;
+    public float WaitBetweenBursts = 0.6f;
     public float FinaleDeleteTime = 1.1f;
 
     private void DestroyWarningDelayed()
