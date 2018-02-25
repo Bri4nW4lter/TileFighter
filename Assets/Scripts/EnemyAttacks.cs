@@ -4,16 +4,7 @@ using UnityEngine;
 
 public class EnemyAttacks : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-
+   
     // Everything for FireAttack
 
     public GameObject[] CrossTiles;

@@ -63,6 +63,19 @@ public class EnemyAI : MonoBehaviour {
         hatMaterial.color = color;
     }
 
+    //Normal Attack
+    public GameObject bulletPrefab;
+    public Transform bulletSpawn;
+
+    private void Attack()
+    {
+        GameObject bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+
+        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 6f;
+
+        Destroy(bullet, 2);
+    }
+
 
 
     void EnemyBehavior()
@@ -75,7 +88,8 @@ public class EnemyAI : MonoBehaviour {
             attacks = Random.Range(0, 4);
             if(attacks == 0)
             {
-                Debug.Log("Attack!");              
+                Debug.Log("Attack!");
+                Attack();
             }
 
             if(attacks == 1)
