@@ -1,14 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine;
 
-public class HealthBar : MonoBehaviour {
+public class BossHealth : MonoBehaviour {
 
     public Image currentHealthbar;
     private static float maxHealth = 100;
     private float health = maxHealth;
-
+    
 
     private void Start()
     {
@@ -26,7 +26,7 @@ public class HealthBar : MonoBehaviour {
     {
         health -= damage;
         Debug.Log("taken Damage");
-        if(health < 0)
+        if (health < 0)
         {
             health = 0;
             Debug.Log("dead");

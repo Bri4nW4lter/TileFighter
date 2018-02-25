@@ -7,15 +7,37 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
-        FindFirstTile();
-        
-	}
+	
 
     public TileScript startingTile;
     public GameObject firstTile;
     TileScript currentTile;
     int direction;
+    public GameObject bulletPrefab;
+    public Transform bulletSpawn;
+
+
+    void Start()
+    {
+        FindFirstTile();
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Shoot();
+        }
+    }
+
+    void Shoot()
+    {
+        GameObject bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+
+        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 6f;
+
+        Destroy(bullet, 2);
+    }
 
     public void UpButton()
     {
@@ -44,10 +66,7 @@ public class PlayerMovement : MonoBehaviour {
         startingTile = firstTile.GetComponent<TileScript>();
     }
 
-    // Update is called once per frame
-    void Update () {
-       
-	}
+    
 
     private void Move()
     {
