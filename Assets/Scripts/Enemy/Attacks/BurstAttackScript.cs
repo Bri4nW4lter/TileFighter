@@ -17,6 +17,7 @@ public class BurstAttackScript : MonoBehaviour {
     public float WarningDeleteTime = 0.2f;
     public float BDeleteTime = 1.0f;
     public float WaitBetweenBursts = 0.9f;
+    public float FinaleDeleteTime = 1.1f;
 
     private void DestroyWarningDelayed()
     {
@@ -33,6 +34,15 @@ public class BurstAttackScript : MonoBehaviour {
         foreach (GameObject target in BurstToDestroy)
         {
             GameObject.Destroy(target, BDeleteTime);
+        }
+    }
+
+    private void DestroyFinalDelayed()
+    {
+        GameObject[] FinaleToDestroy = GameObject.FindGameObjectsWithTag("LaserAttack");
+        foreach (GameObject target in FinaleToDestroy)
+        {
+            GameObject.Destroy(target, FinaleDeleteTime);
         }
     }
 
@@ -134,7 +144,7 @@ public class BurstAttackScript : MonoBehaviour {
         for (int i = 0; i < 8; i++)
         {
             Instantiate(VerticalLaser, Burst05[i].transform.position, Burst05[i].transform.rotation);
-            DestroyBurstDelayed();
+            DestroyFinalDelayed();
         }
         
 

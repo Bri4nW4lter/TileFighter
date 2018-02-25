@@ -23,6 +23,7 @@ public class EnemyAI : MonoBehaviour {
     public MagicMissile magicMissile;
     public BurstAttackScript burstAttack;
     public Material hatMaterial;
+    BossHealth bossHealth;
    
 
     // Use this for initialization
@@ -36,6 +37,8 @@ public class EnemyAI : MonoBehaviour {
         StartCoroutine("Interval");
 
     }
+
+
   
 
      void FindFirstTile()
@@ -81,11 +84,15 @@ public class EnemyAI : MonoBehaviour {
 
         if (direction == 4)
         {
+            int stage = 5;                  // set this depending on BossHealth Ratio --> advance stage every ~10% maybe= --> full power at 50%
+                                            // set Enemy Speed depending on stage maybe
+
             EnemySpeed = AttackSpeed;
-            attacks = Random.Range(0, 5);
+            attacks = Random.Range(0, stage);
             
             if(attacks == 0)
             {
+                HatChangeColor(Color.magenta);
                 Debug.Log("Attack!");
                 magicMissile.Attack();
             }
@@ -113,9 +120,10 @@ public class EnemyAI : MonoBehaviour {
 
             if (attacks == 4)
             {
+                HatChangeColor(Color.white);
                 Debug.Log("LaserBurst!");
-                EnemySpeed = BurstAttackSpeed;
-                burstAttack.BurstAttack();
+                EnemySpeed = BurstAttackSpeed;                      // boss needs to cooldown --> player can do lot of damage after heavy attack
+                burstAttack.BurstAttack();                  
             }
         }
 

@@ -8,8 +8,8 @@ public class BossHealth : MonoBehaviour {
     public Image currentHealthbar;
     private static float maxHealth = 100;
     private float health = maxHealth;
-    
-    
+ 
+
 
     private void Start()
     {
@@ -22,6 +22,8 @@ public class BossHealth : MonoBehaviour {
         float ratio = health / maxHealth;
         currentHealthbar.rectTransform.localScale = new Vector3(ratio, 1, 1);
     }
+
+
 
 
     private void TakeDamage(float damage)
