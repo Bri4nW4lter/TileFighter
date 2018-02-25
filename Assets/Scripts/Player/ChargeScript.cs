@@ -8,17 +8,21 @@ public class ChargeScript : MonoBehaviour {
     public Image currentChargeBar;
     private static float minCharge = 0;
     private float charge = minCharge;
+    public float maxCharge = 5f;
 
     // Use this for initialization
     void Start () {
-
+        UpdateChargeBar();
 	}
 
     public void ChargeAttack()
     {
-        if (charge ==10)
+        if (charge ==maxCharge)
         {
             Debug.Log("pew");
+
+            //chargeattack
+            charge = 0;
         }
 
     }
@@ -27,16 +31,17 @@ public class ChargeScript : MonoBehaviour {
 
     private void UpdateChargeBar()
     {
-        currentChargeBar.rectTransform.localScale = new Vector3(charge, 1, 1);
+        float ratio = (minCharge + charge) / maxCharge;
+        currentChargeBar.rectTransform.localScale = new Vector3(ratio, 1, 1);
     }
 
     private void TakeDamage(float damage)
     {
         charge++;
         Debug.Log("Power up");
-        if (charge > 10)
+        if (charge > maxCharge)
         {
-            charge = 10;
+            charge = maxCharge;
             Debug.Log("maxCharge");
         }
         UpdateChargeBar();
