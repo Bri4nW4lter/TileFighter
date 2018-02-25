@@ -8,6 +8,8 @@ TagManager:
   - LightningAttack
   - EarthAttack
   - Enemy
+  - LaserAttack
+  - LaserWarning
   layers:
   - Default
   - TransparentFX

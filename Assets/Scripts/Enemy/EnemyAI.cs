@@ -16,11 +16,14 @@ public class EnemyAI : MonoBehaviour {
     public float EnemySpeed = 0.4f;
     public float defSpeed;
     public float AttackSpeed = 1.0f;
+    public float BurstAttackSpeed = 2.0f;
     public FireCrossScript enemyFire;
     public LightningStrikeScript enemyLightning;
     public EarthSpikeScript enemyEarthSpike;
     public MagicMissile magicMissile;
+    public BurstAttackScript burstAttack;
     public Material hatMaterial;
+   
 
     // Use this for initialization
     void Start () {
@@ -70,6 +73,8 @@ public class EnemyAI : MonoBehaviour {
     }
 
 
+    //Movement and Attacks
+
     void EnemyBehavior()
     {
         direction = Random.Range(0, 5);
@@ -77,7 +82,8 @@ public class EnemyAI : MonoBehaviour {
         if (direction == 4)
         {
             EnemySpeed = AttackSpeed;
-            attacks = Random.Range(0, 4);
+            attacks = Random.Range(0, 5);
+            
             if(attacks == 0)
             {
                 Debug.Log("Attack!");
@@ -103,6 +109,13 @@ public class EnemyAI : MonoBehaviour {
                 HatChangeColor(Color.grey);
                 Debug.Log("EarthSpike!");
                 enemyEarthSpike.EarthSpike();
+            }
+
+            if (attacks == 4)
+            {
+                Debug.Log("LaserBurst!");
+                EnemySpeed = BurstAttackSpeed;
+                burstAttack.BurstAttack();
             }
         }
 

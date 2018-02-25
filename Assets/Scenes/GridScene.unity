@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43877694, g: 0.48694068, b: 0.5672079, a: 1}
+  m_IndirectSpecularColor: {r: 0.43877664, g: 0.48694026, b: 0.5672073, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -604,6 +604,75 @@ Transform:
   m_PrefabParentObject: {fileID: 4195542167520288, guid: 8b499700f5047714194747d8cea5c18d,
     type: 2}
   m_PrefabInternal: {fileID: 1751326441}
+--- !u!1 &294619133
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 294619134}
+  - component: {fileID: 294619136}
+  - component: {fileID: 294619135}
+  m_Layer: 5
+  m_Name: ChargeBar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &294619134
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 294619133}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.54999995, y: 0.7125003, z: 1}
+  m_Children:
+  - {fileID: 433010984}
+  m_Father: {fileID: 1571138911}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 124.5, y: -78.2}
+  m_SizeDelta: {x: 398.7, y: 34.65}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &294619135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 294619133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &294619136
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 294619133}
 --- !u!1001 &316618015
 Prefab:
   m_ObjectHideFlags: 0
@@ -1051,6 +1120,74 @@ Transform:
   m_PrefabParentObject: {fileID: 4195542167520288, guid: 8b499700f5047714194747d8cea5c18d,
     type: 2}
   m_PrefabInternal: {fileID: 2077438842}
+--- !u!1 &433010983
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 433010984}
+  - component: {fileID: 433010986}
+  - component: {fileID: 433010985}
+  m_Layer: 5
+  m_Name: CurrentCharge
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &433010984
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 433010983}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.013129961, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 294619134}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: -0.1000061, y: -17.00005}
+  m_SizeDelta: {x: 398.7, y: 34.65}
+  m_Pivot: {x: 0, y: 0.5}
+--- !u!114 &433010985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 433010983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.22204803, g: 0.52116126, b: 0.8161765, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &433010986
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 433010983}
 --- !u!1001 &450530917
 Prefab:
   m_ObjectHideFlags: 0
@@ -3378,6 +3515,16 @@ Prefab:
       propertyPath: hatMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 9c562ea15d09eac4ba08c5ae7e883b61, type: 2}
+    - target: {fileID: 114941401605177166, guid: 84cf4c32711f1634aa6cc75c88c8838f,
+        type: 2}
+      propertyPath: burstAttack
+      value: 
+      objectReference: {fileID: 1849612553}
+    - target: {fileID: 114941401605177166, guid: 84cf4c32711f1634aa6cc75c88c8838f,
+        type: 2}
+      propertyPath: BurstAttackSpeed
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 84cf4c32711f1634aa6cc75c88c8838f, type: 2}
   m_IsPrefabParent: 0
@@ -3546,6 +3693,7 @@ GameObject:
   - component: {fileID: 1849612550}
   - component: {fileID: 1849612547}
   - component: {fileID: 1849612552}
+  - component: {fileID: 1849612553}
   m_Layer: 0
   m_Name: EnemyAttackHandler
   m_TagString: Untagged
@@ -3670,6 +3818,58 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1723304574055168, guid: 2d13e2831ad1bba46925112ef1353661,
     type: 2}
   bulletSpawn: {fileID: 214103775}
+--- !u!114 &1849612553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1849612546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23a4e405c719f1a419efe9a876aa8627, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HorizontalLaser: {fileID: 1882041511486298, guid: 5cf3af30da775c54087c4b87e9c08dab,
+    type: 2}
+  VerticalLaser: {fileID: 1712026095824296, guid: cce6700c5372e084f97eaea0fe8f2d12,
+    type: 2}
+  BurstWarning: {fileID: 1645808667039450, guid: bb454f316d3ce444fa4665c7fcd40cc8,
+    type: 2}
+  Burst01:
+  - {fileID: 1192404704}
+  - {fileID: 1666737878}
+  - {fileID: 2083019106}
+  - {fileID: 934746698}
+  - {fileID: 1238770882}
+  - {fileID: 2022942227}
+  Burst02:
+  - {fileID: 1696131343}
+  - {fileID: 1182546014}
+  - {fileID: 1805970534}
+  Burst03:
+  - {fileID: 1666737878}
+  - {fileID: 2022942227}
+  - {fileID: 1696131343}
+  - {fileID: 1192404704}
+  - {fileID: 2083019106}
+  - {fileID: 1805970534}
+  Burst04:
+  - {fileID: 1238770882}
+  - {fileID: 1182546014}
+  - {fileID: 934746698}
+  Burst05:
+  - {fileID: 1192404704}
+  - {fileID: 934746698}
+  - {fileID: 2083019106}
+  - {fileID: 1696131343}
+  - {fileID: 1805970534}
+  - {fileID: 1666737878}
+  - {fileID: 1238770882}
+  - {fileID: 2022942227}
+  BDelayTime: 0.4
+  WarningDeleteTime: 0.2
+  BDeleteTime: 0.7
+  WaitBetweenBursts: 0.6
 --- !u!1001 &1853862793
 Prefab:
   m_ObjectHideFlags: 0
@@ -3798,6 +3998,23 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 65c6fec096cc69643b5869d0ed9de0be, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1918559843 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1426299709640830, guid: cf235929a75ac2d43b562d79b93d7c06,
+    type: 2}
+  m_PrefabInternal: {fileID: 630867518}
+--- !u!114 &1918559848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1918559843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005f161119e8b3746916b030c4349ecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentChargeBar: {fileID: 433010985}
 --- !u!1001 &1939132302
 Prefab:
   m_ObjectHideFlags: 0
