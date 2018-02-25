@@ -2,19 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossBullet : MonoBehaviour {
+public class PlayerBullet : MonoBehaviour {
 
     public bool isDamaging;
     public float damage = 0;
 
     private void OnTriggerEnter(Collider col)
     {
-        if (col.tag == "Player")
+        if (col.tag == "Enemy")
         {
             col.SendMessage((isDamaging) ? "TakeDamage" : "Heal", damage);
+
+            Destroy(gameObject);
         }
 
-        Destroy(gameObject);
+       
     }
 
 }

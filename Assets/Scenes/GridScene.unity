@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.4964127, b: 0.5748172, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -175,6 +175,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &61241959 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4421352456118874, guid: cf235929a75ac2d43b562d79b93d7c06,
+    type: 2}
+  m_PrefabInternal: {fileID: 630867518}
 --- !u!1 &204707282
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,7 +532,7 @@ Prefab:
     - target: {fileID: 54483760810338562, guid: cf235929a75ac2d43b562d79b93d7c06,
         type: 2}
       propertyPath: m_UseGravity
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 65765526724735622, guid: cf235929a75ac2d43b562d79b93d7c06,
         type: 2}
@@ -555,6 +560,20 @@ Prefab:
       value: 
       objectReference: {fileID: 1723304574055168, guid: a0295bce770477c43badc7e5696752cf,
         type: 2}
+    - target: {fileID: 65765526724735622, guid: cf235929a75ac2d43b562d79b93d7c06,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1642957799636150, guid: cf235929a75ac2d43b562d79b93d7c06, type: 2}
+      propertyPath: m_Name
+      value: PhysicsCube
+      objectReference: {fileID: 0}
+    - target: {fileID: 114239492135233920, guid: cf235929a75ac2d43b562d79b93d7c06,
+        type: 2}
+      propertyPath: bulletSpawn
+      value: 
+      objectReference: {fileID: 61241959}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf235929a75ac2d43b562d79b93d7c06, type: 2}
   m_IsPrefabParent: 0
@@ -635,14 +654,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingTile: {fileID: 0}
   firstTile: {fileID: 0}
-  EnemySpeed: 0.4
+  EnemySpeed: 0.35
   defSpeed: 0
-  AttackSpeed: 1.5
-  enemyAttacks: {fileID: 1849612547}
+  AttackSpeed: 2
+  enemyFire: {fileID: 1849612551}
+  enemyLightning: {fileID: 1849612550}
+  enemyEarthSpike: {fileID: 1849612547}
+  magicMissile: {fileID: 1849612552}
   hatMaterial: {fileID: 2100000, guid: f380822d541c6ec40864ede5309bd693, type: 2}
-  bulletPrefab: {fileID: 1723304574055168, guid: 2d13e2831ad1bba46925112ef1353661,
-    type: 2}
-  bulletSpawn: {fileID: 214103775}
 --- !u!65 &709425691
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1046,8 +1065,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1849612548}
-  - component: {fileID: 1849612547}
   - component: {fileID: 1849612549}
+  - component: {fileID: 1849612551}
+  - component: {fileID: 1849612550}
+  - component: {fileID: 1849612547}
+  - component: {fileID: 1849612552}
   m_Layer: 0
   m_Name: EnemyAttackHandler
   m_TagString: Untagged
@@ -1063,35 +1085,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1849612546}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a38b9e05f82c9548847b6da7dbf3aeb, type: 3}
+  m_Script: {fileID: 11500000, guid: 91709b8dad202584eb1dc4a9eccddf78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CrossTiles:
-  - {fileID: 1182546014}
-  - {fileID: 1696131343}
-  - {fileID: 1805970534}
-  - {fileID: 934746698}
-  - {fileID: 1238770882}
-  FireObject: {fileID: 1755469328448518, guid: 9822a7dad34b6a9479a6e252b4a91e00, type: 2}
-  FireWarningObject: {fileID: 1645808667039450, guid: aa10a1fc59f3d74468e9aaa0a3a2c553,
-    type: 2}
-  FDeleteTime: 0.5
-  FDelayTime: 0.4
-  LightningImpactZone01:
-  - {fileID: 1192404704}
-  - {fileID: 934746698}
-  - {fileID: 2083019106}
-  LightningImpactZone02:
-  - {fileID: 1666737878}
-  - {fileID: 1238770882}
-  - {fileID: 2022942227}
-  LightningObject: {fileID: 1503965998770368, guid: 1ff535cf2b1e8cb4ea80edffb7734a7f,
-    type: 2}
-  LightningWarning: {fileID: 1645808667039450, guid: 6dec07aa7580c4f40b03d6cb5a7bedf9,
-    type: 2}
-  LDelayTime: 0.5
-  WaitBetweenStrikes: 0.5
-  LDeleteTime: 0.2
   CornerTiles:
   - {fileID: 1192404704}
   - {fileID: 2083019106}
@@ -1101,8 +1097,8 @@ MonoBehaviour:
     type: 2}
   EarthWarningObject: {fileID: 1645808667039450, guid: 410fc9b272bf69a4e8ac036bc9916d87,
     type: 2}
-  EDeleteTime: 0.3
-  EDelayTime: 0.5
+  EDeleteTime: 0.5
+  EDelayTime: 0.4
 --- !u!4 &1849612548
 Transform:
   m_ObjectHideFlags: 0
@@ -1130,6 +1126,74 @@ MonoBehaviour:
   sun: {fileID: 807946538}
   StandardIntensity: 1
   DarkendIntensity: 0.5
+--- !u!114 &1849612550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1849612546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f64c1882f45d0e54abb24fa6d5d85706, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LightningImpactZone01:
+  - {fileID: 1192404704}
+  - {fileID: 934746698}
+  - {fileID: 2083019106}
+  - {fileID: 1696131343}
+  - {fileID: 1182546014}
+  - {fileID: 1805970534}
+  LightningImpactZone02:
+  - {fileID: 1696131343}
+  - {fileID: 1182546014}
+  - {fileID: 1805970534}
+  - {fileID: 1666737878}
+  - {fileID: 1238770882}
+  - {fileID: 2022942227}
+  LightningObject: {fileID: 1503965998770368, guid: 1ff535cf2b1e8cb4ea80edffb7734a7f,
+    type: 2}
+  LightningWarning: {fileID: 1645808667039450, guid: 6dec07aa7580c4f40b03d6cb5a7bedf9,
+    type: 2}
+  LDelayTime: 0.7
+  WaitBetweenStrikes: 0.2
+  LDeleteTime: 0.2
+--- !u!114 &1849612551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1849612546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 352bed7ea38a6a8489742764d0c1264a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CrossTiles:
+  - {fileID: 1182546014}
+  - {fileID: 1805970534}
+  - {fileID: 1696131343}
+  - {fileID: 934746698}
+  - {fileID: 1238770882}
+  FireObject: {fileID: 1755469328448518, guid: 9822a7dad34b6a9479a6e252b4a91e00, type: 2}
+  FireWarningObject: {fileID: 1645808667039450, guid: aa10a1fc59f3d74468e9aaa0a3a2c553,
+    type: 2}
+  FDeleteTime: 0.5
+  FDelayTime: 0.4
+--- !u!114 &1849612552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1849612546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6497a61229983644189403770051b666, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1723304574055168, guid: 2d13e2831ad1bba46925112ef1353661,
+    type: 2}
+  bulletSpawn: {fileID: 214103775}
 --- !u!1001 &1964117862
 Prefab:
   m_ObjectHideFlags: 0

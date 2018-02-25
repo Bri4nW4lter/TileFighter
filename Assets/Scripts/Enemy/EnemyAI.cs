@@ -16,12 +16,18 @@ public class EnemyAI : MonoBehaviour {
     public float EnemySpeed = 0.4f;
     public float defSpeed;
     public float AttackSpeed = 1.0f;
-    public EnemyAttacks enemyAttacks;
+    public FireCrossScript enemyFire;
+    public LightningStrikeScript enemyLightning;
+    public EarthSpikeScript enemyEarthSpike;
+    public MagicMissile magicMissile;
     public Material hatMaterial;
 
     // Use this for initialization
     void Start () {
-        GetComponent<EnemyAttacks>();
+        GetComponent<FireCrossScript>();
+        GetComponent<LightningStrikeScript>();
+        GetComponent<EarthSpikeScript>();
+        GetComponent<MagicMissile>();
         FindFirstTile();
         defSpeed = EnemySpeed;
         StartCoroutine("Interval");
@@ -63,20 +69,6 @@ public class EnemyAI : MonoBehaviour {
         hatMaterial.color = color;
     }
 
-    //Normal Attack
-    public GameObject bulletPrefab;
-    public Transform bulletSpawn;
-
-    private void Attack()
-    {
-        GameObject bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
-
-        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 6f;
-
-        Destroy(bullet, 2);
-    }
-
-
 
     void EnemyBehavior()
     {
@@ -89,20 +81,20 @@ public class EnemyAI : MonoBehaviour {
             if(attacks == 0)
             {
                 Debug.Log("Attack!");
-                Attack();
+                magicMissile.Attack();
             }
 
             if(attacks == 1)
             {
                 HatChangeColor(Color.red);
                 Debug.Log("FireCrossAttack!");
-                enemyAttacks.FireCross();
+                enemyFire.FireCross();
             }
 
             if (attacks == 2)
             {
                 HatChangeColor(Color.cyan);
-                enemyAttacks.LightningStrike();
+                enemyLightning.LightningStrike();
                 Debug.Log("LightningStrike!");
             }
 
@@ -110,7 +102,7 @@ public class EnemyAI : MonoBehaviour {
             {
                 HatChangeColor(Color.grey);
                 Debug.Log("EarthSpike!");
-                enemyAttacks.EarthSpike();
+                enemyEarthSpike.EarthSpike();
             }
         }
 
