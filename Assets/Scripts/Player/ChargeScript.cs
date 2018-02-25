@@ -13,11 +13,19 @@ public class ChargeScript : MonoBehaviour {
     // Use this for initialization
     void Start () {
         UpdateChargeBar();
-	}
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            ChargeAttack();
+        }
+    }
 
     public void ChargeAttack()
     {
-        if (charge ==maxCharge)
+        if (charge == maxCharge)
         {
             Debug.Log("pew");
 

@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour {
     public TileScript startingTile;
     public GameObject firstTile;
     TileScript currentTile;
-    ChargeScript chargeScript;
     int direction;
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
@@ -21,7 +20,6 @@ public class PlayerMovement : MonoBehaviour {
     void Start()
     {
         FindFirstTile();
-        GetComponent<ChargeScript>();
         
     }
 
@@ -31,11 +29,7 @@ public class PlayerMovement : MonoBehaviour {
         {
             Shoot();
         }
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            chargeScript.ChargeAttack();
-
-        }
+ 
     }
 
     void Shoot()

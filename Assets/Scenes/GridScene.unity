@@ -1436,6 +1436,11 @@ Prefab:
       propertyPath: currentHealthbar
       value: 
       objectReference: {fileID: 1569393877}
+    - target: {fileID: 114126736576359666, guid: cf235929a75ac2d43b562d79b93d7c06,
+        type: 2}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 1406375423}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf235929a75ac2d43b562d79b93d7c06, type: 2}
   m_IsPrefabParent: 0
@@ -2759,6 +2764,30 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: da12e82f48e237747b2f824da5069ae2, type: 2}
   m_PrefabInternal: {fileID: 1401927847}
+--- !u!1 &1406375418 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1598130986755302, guid: 84cf4c32711f1634aa6cc75c88c8838f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1783135001}
+--- !u!114 &1406375423 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114941401605177166, guid: 84cf4c32711f1634aa6cc75c88c8838f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1783135001}
+  m_Script: {fileID: 11500000, guid: f70716eef5417cf4e9570b2d8e59cb80, type: 3}
+--- !u!114 &1406375424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1406375418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005f161119e8b3746916b030c4349ecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentChargeBar: {fileID: 433010985}
+  maxCharge: 5
 --- !u!1001 &1477961174
 Prefab:
   m_ObjectHideFlags: 0
@@ -3998,24 +4027,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 65c6fec096cc69643b5869d0ed9de0be, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1918559843 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1426299709640830, guid: cf235929a75ac2d43b562d79b93d7c06,
-    type: 2}
-  m_PrefabInternal: {fileID: 630867518}
---- !u!114 &1918559848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1918559843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 005f161119e8b3746916b030c4349ecf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentChargeBar: {fileID: 433010985}
-  maxCharge: 5
 --- !u!1001 &1939132302
 Prefab:
   m_ObjectHideFlags: 0
