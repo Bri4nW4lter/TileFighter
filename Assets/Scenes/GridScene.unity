@@ -2493,7 +2493,7 @@ MonoBehaviour:
   - {fileID: 1696131343}
   - {fileID: 934746698}
   - {fileID: 1238770882}
-  FireObject: {fileID: 1755469328448518, guid: 9822a7dad34b6a9479a6e252b4a91e00, type: 2}
+  FireObject: {fileID: 1013985304468182, guid: 9822a7dad34b6a9479a6e252b4a91e00, type: 2}
   FireWarningObject: {fileID: 1645808667039450, guid: aa10a1fc59f3d74468e9aaa0a3a2c553,
     type: 2}
   FDeleteTime: 0.5
