@@ -72,11 +72,10 @@ public class EnemyAI : MonoBehaviour {
         if (direction == 4)
         {
             EnemySpeed = AttackSpeed;
-            attacks = Random.Range(0, 2);
+            attacks = Random.Range(0, 4);
             if(attacks == 0)
             {
-                enemyAttacks.LightningStrike();
-                Debug.Log("LightningStrike");               
+                Debug.Log("Attack!");              
             }
 
             if(attacks == 1)
@@ -84,7 +83,21 @@ public class EnemyAI : MonoBehaviour {
                 HatChangeColor(Color.red);
                 Debug.Log("FireCrossAttack!");
                 enemyAttacks.FireCross();
-            } 
+            }
+
+            if (attacks == 2)
+            {
+                HatChangeColor(Color.cyan);
+                enemyAttacks.LightningStrike();
+                Debug.Log("LightningStrike!");
+            }
+
+            if (attacks == 3)
+            {
+                HatChangeColor(Color.grey);
+                Debug.Log("EarthSpike!");
+                enemyAttacks.EarthSpike();
+            }
         }
 
         Move();

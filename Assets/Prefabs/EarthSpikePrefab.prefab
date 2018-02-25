@@ -37,11 +37,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4884814935809050}
-  - component: {fileID: 114189712846398616}
   - component: {fileID: 65323386221813082}
+  - component: {fileID: 114428535391623584}
   m_Layer: 0
-  m_Name: FireAttackPrefab
-  m_TagString: FireAttack
+  m_Name: EarthSpikePrefab
+  m_TagString: EarthAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,7 +126,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 3, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114189712846398616
+--- !u!114 &114428535391623584
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -134,11 +134,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1755469328448518}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0150318de92e6a84a9fb9541b44cf162, type: 3}
+  m_Script: {fileID: 11500000, guid: 457795e4530b0684d9bb50ee32a53615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isDamaging: 1
-  damage: 10
+  damage: 20
 --- !u!135 &135069598215956088
 SphereCollider:
   m_ObjectHideFlags: 1

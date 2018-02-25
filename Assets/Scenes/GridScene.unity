@@ -591,6 +591,16 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 0.85
       objectReference: {fileID: 0}
+    - target: {fileID: 54483760810338562, guid: cf235929a75ac2d43b562d79b93d7c06,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 54483760810338562, guid: cf235929a75ac2d43b562d79b93d7c06,
+        type: 2}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf235929a75ac2d43b562d79b93d7c06, type: 2}
   m_IsPrefabParent: 0
@@ -1135,13 +1145,7 @@ MonoBehaviour:
   - {fileID: 1192404704}
   - {fileID: 934746698}
   - {fileID: 2083019106}
-  - {fileID: 1696131343}
-  - {fileID: 1182546014}
-  - {fileID: 1805970534}
   LightningImpactZone02:
-  - {fileID: 1696131343}
-  - {fileID: 1182546014}
-  - {fileID: 1805970534}
   - {fileID: 1666737878}
   - {fileID: 1238770882}
   - {fileID: 2022942227}
@@ -1149,9 +1153,20 @@ MonoBehaviour:
     type: 2}
   LightningWarning: {fileID: 1645808667039450, guid: 6dec07aa7580c4f40b03d6cb5a7bedf9,
     type: 2}
-  LDelayTime: 0.4
+  LDelayTime: 0.5
   WaitBetweenStrikes: 0.5
   LDeleteTime: 0.2
+  CornerTiles:
+  - {fileID: 1192404704}
+  - {fileID: 2083019106}
+  - {fileID: 1666737878}
+  - {fileID: 2022942227}
+  EarthSpikeObject: {fileID: 1755469328448518, guid: f0cdd97a31883294bac8a75802e96236,
+    type: 2}
+  EarthWarningObject: {fileID: 1645808667039450, guid: 410fc9b272bf69a4e8ac036bc9916d87,
+    type: 2}
+  EDeleteTime: 0.3
+  EDelayTime: 0.5
 --- !u!4 &1849612548
 Transform:
   m_ObjectHideFlags: 0

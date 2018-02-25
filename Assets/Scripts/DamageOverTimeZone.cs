@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireDamageZone : MonoBehaviour {
+public class DamageOverTimeZone : MonoBehaviour {
 
     public bool isDamaging;
-    public float damage = 10;
+    public float damage = 0;
 
     private void OnTriggerStay(Collider col)
     {

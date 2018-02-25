@@ -74,7 +74,7 @@ public class EnemyAttacks : MonoBehaviour {
 
     public void LightningStrike()
     {
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < 3; i++)
         {
             Instantiate(LightningWarning, LightningImpactZone01[i].transform.position, LightningImpactZone01[i].transform.rotation);
           
@@ -84,7 +84,7 @@ public class EnemyAttacks : MonoBehaviour {
 
     void FirstStrike()
     {
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < 3; i++)
         {
             Instantiate(LightningObject, LightningImpactZone01[i].transform.position, LightningImpactZone01[i].transform.rotation);
             DestroyLightningDelayed();
@@ -93,7 +93,7 @@ public class EnemyAttacks : MonoBehaviour {
     }
     void SecondStrikeWarning()
     {
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < 3; i++)
         {
             Instantiate(LightningWarning, LightningImpactZone02[i].transform.position, LightningImpactZone02[i].transform.rotation);
 
@@ -102,12 +102,50 @@ public class EnemyAttacks : MonoBehaviour {
     }
     void SecondStrike()
     {
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < 3; i++)
         {
             Instantiate(LightningObject, LightningImpactZone02[i].transform.position, LightningImpactZone02[i].transform.rotation);
             DestroyLightningDelayed();
         }
 
     }
+
+    //Everything for Earthstrike
+
+    public GameObject[] CornerTiles;
+    public GameObject EarthSpikeObject;
+    public GameObject EarthWarningObject;
+    public float EDeleteTime = 0.5f;
+    public float EDelayTime = 0.4f;
+
+    private void DestroyEarthDelayed()
+    {
+        GameObject[] earthToDestroy = GameObject.FindGameObjectsWithTag("EarthAttack");
+        foreach (GameObject target in earthToDestroy)
+        {
+            GameObject.Destroy(target, EDeleteTime);
+        }
+    }
+
+    public void EarthSpike()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            Instantiate(EarthWarningObject, CornerTiles[i].transform.position, CornerTiles[i].transform.rotation);
+
+        }
+        Invoke("EarthSpikeAttack", EDelayTime);
+    }
+
+    public void EarthSpikeAttack()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            Instantiate(EarthSpikeObject, CornerTiles[i].transform.position, CornerTiles[i].transform.rotation);
+            DestroyEarthDelayed();
+        }
+    }
+
+
 
 }

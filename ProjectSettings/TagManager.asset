@@ -6,6 +6,7 @@ TagManager:
   tags:
   - FireAttack
   - LightningAttack
+  - EarthAttack
   layers:
   - Default
   - TransparentFX

@@ -642,7 +642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDamaging: 1
-  damage: 5
+  damage: 15
 --- !u!135 &135818008390558294
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -651,7 +651,7 @@ SphereCollider:
   m_GameObject: {fileID: 1626979909853130}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -663,7 +663,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1537140331877698}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -676,7 +676,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1204820661776746}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -689,7 +689,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1334524675557548}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -702,7 +702,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1705526214812208}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -715,7 +715,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1002928844274282}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -728,7 +728,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1133513251140134}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightningDamageZone : MonoBehaviour {
+public class TriggerDamageZone : MonoBehaviour {
 
     public bool isDamaging;
-    public float damage = 20;
+    public float damage = 0;
 
     private void OnTriggerEnter(Collider col)
     {
