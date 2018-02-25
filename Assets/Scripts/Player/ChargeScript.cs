@@ -9,6 +9,7 @@ public class ChargeScript : MonoBehaviour {
     private static float minCharge = 0;
     private float charge = minCharge;
     public float maxCharge = 5f;
+    public TileScript[] ChargeTiles;
 
     // Use this for initialization
     void Start () {
@@ -31,6 +32,7 @@ public class ChargeScript : MonoBehaviour {
 
             //chargeattack
             charge = 0;
+            UpdateChargeBar();
         }
 
     }
