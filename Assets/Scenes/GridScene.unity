@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43877664, g: 0.48694026, b: 0.5672073, a: 1}
+  m_IndirectSpecularColor: {r: 0.43877694, g: 0.48694068, b: 0.5672079, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -3368,6 +3368,16 @@ Prefab:
       propertyPath: magicMissile
       value: 
       objectReference: {fileID: 1849612552}
+    - target: {fileID: 23694298604711294, guid: 84cf4c32711f1634aa6cc75c88c8838f,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9c562ea15d09eac4ba08c5ae7e883b61, type: 2}
+    - target: {fileID: 114941401605177166, guid: 84cf4c32711f1634aa6cc75c88c8838f,
+        type: 2}
+      propertyPath: hatMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 9c562ea15d09eac4ba08c5ae7e883b61, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 84cf4c32711f1634aa6cc75c88c8838f, type: 2}
   m_IsPrefabParent: 0
