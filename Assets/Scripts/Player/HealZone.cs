@@ -5,7 +5,7 @@ using UnityEngine;
 public class HealZone : MonoBehaviour {
 
     public TileScript healTile;
-    private float HDeleteTime = 2.0f;
+    private float hDeleteTime = 2.0f;
     public GameObject HealZoneObject;
     public GameObject healCharge;
     private float localCharge;
@@ -26,7 +26,7 @@ public class HealZone : MonoBehaviour {
         GameObject[] healToDestroy = GameObject.FindGameObjectsWithTag("HealField");
         foreach (GameObject target in healToDestroy)
         {
-            GameObject.Destroy(target, HDeleteTime);
+            GameObject.Destroy(target, hDeleteTime);
         }
     }
 

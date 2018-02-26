@@ -13,8 +13,7 @@ public class PlayerMovement : MonoBehaviour {
     public GameObject firstTile;
     TileScript currentTile;
     int direction;
-    public GameObject bulletPrefab;
-    public Transform bulletSpawn;
+
 
     void Start()
     {
@@ -22,30 +21,7 @@ public class PlayerMovement : MonoBehaviour {
         Move();
         
     }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Shoot();
-        }
- 
-    }
-
-    void Shoot()
-    {
-        GameObject bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
-
-        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 6f;
-
-        Destroy(bullet, 2);
-    }
-
-    public void ShootButton()
-    {
-        Shoot();
-    }
-
+  
     public void UpButton()
     {
         direction = 0;
@@ -92,7 +68,6 @@ public class PlayerMovement : MonoBehaviour {
         {
             return;
         }
-
         //Move to Position of the Tile
         transform.position = finalTile.transform.position;
         currentTile = finalTile;

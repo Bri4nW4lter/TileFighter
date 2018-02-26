@@ -17,23 +17,11 @@ public class ChargeScript : MonoBehaviour {
         UpdateChargeBar();
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            ChargeAttack();
-        }
-    }
-
     public void ChargeAttack()
     {
         if (charge == maxCharge)
         {
-            Debug.Log("pew");
-
             GameObject chargeBullet = (GameObject)Instantiate(chargePrefab, chargeSpawn.position, chargeSpawn.rotation);
-
-            Debug.Log("2");
             chargeBullet.GetComponent<Rigidbody>().velocity = chargeBullet.transform.forward * 3f;
             Destroy(chargeBullet, 5);
             charge = 0;
@@ -42,22 +30,19 @@ public class ChargeScript : MonoBehaviour {
 
     }
 
-
-
     public void UpdateChargeBar()
     {
         float ratio = (minCharge + charge) / maxCharge;
         currentChargeBar.rectTransform.localScale = new Vector3(ratio, 1, 1);
     }
 
+    //if Boss gets damaged, increase charge
     private void TakeDamage(float damage)
     {
         charge++;
-        Debug.Log("Power up");
         if (charge > maxCharge)
         {
             charge = maxCharge;
-            Debug.Log("maxCharge");
         }
         UpdateChargeBar();
     }
