@@ -7,11 +7,9 @@ using UnityEngine;
 public class BossHealth : MonoBehaviour {
 
     public Image currentHealthbar;
-    private static float maxHealth = 100;
-    private float health = maxHealth;
+    private static float maxHealth = 200;
+    public float health = maxHealth;
  
-
-
     private void Start()
     {
         UpdateHealthbar();
@@ -33,7 +31,8 @@ public class BossHealth : MonoBehaviour {
     {
         if (health == 0)
         {
-            SceneManager.LoadScene("WinScene");
+          
+           SceneManager.LoadScene("WinScene");
         }
     }
 

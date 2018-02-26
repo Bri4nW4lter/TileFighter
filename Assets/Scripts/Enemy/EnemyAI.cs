@@ -23,7 +23,9 @@ public class EnemyAI : MonoBehaviour {
     public MagicMissile magicMissile;
     public BurstAttackScript burstAttack;
     public Material hatMaterial;
-    BossHealth bossHealth;
+    public GameObject bossHealth;
+    private float stageHealth=200;
+    
    
 
     // Use this for initialization
@@ -35,6 +37,7 @@ public class EnemyAI : MonoBehaviour {
         FindFirstTile();
         defSpeed = EnemySpeed;
         StartCoroutine("Interval");
+        bossHealth.GetComponent<BossHealth>().health = stageHealth;
 
     }
 
@@ -45,12 +48,14 @@ public class EnemyAI : MonoBehaviour {
     {
         firstTile = GameObject.Find("Arena/EnemyTile4");
         startingTile = firstTile.GetComponent<TileScript>();
+      
     }
 
     // Update is called once per frame
-    void Update () {
-      
-	}
+    void Update ()
+    {
+        stageHealth= bossHealth.GetComponent<BossHealth>().health;
+    }
 
     void ResetSpeed()
     {
@@ -80,13 +85,33 @@ public class EnemyAI : MonoBehaviour {
 
     void EnemyBehavior()
     {
+        int stage=2;
+        if (stageHealth >= 175)
+        {
+            stage = 2;
+        }
+        if (stageHealth >= 150 && stageHealth < 175)
+        {
+            stage = 3;
+        }
+        if (stageHealth >= 125 && stageHealth < 150)
+        {
+            stage = 4;
+        }
+
+        if (stageHealth >= 100 && stageHealth <= 125)
+        {
+            stage = 5;
+        }
+
+        Debug.Log(stage);
+
+
         direction = Random.Range(0, 5);
 
         if (direction == 4)
         {
-            int stage = 5;                  // set this depending on BossHealth Ratio --> advance stage every ~10% maybe= --> full power at 50%
-                                            // set Enemy Speed depending on stage maybe
-
+                       
             EnemySpeed = AttackSpeed;
             attacks = Random.Range(0, stage);
             
