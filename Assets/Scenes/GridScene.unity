@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43877694, g: 0.48694068, b: 0.5672079, a: 1}
+  m_IndirectSpecularColor: {r: 0.43877664, g: 0.48694026, b: 0.5672073, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2467,6 +2467,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e52aac14d60082e47a97f24ff7c997ac, type: 3}
   m_IsPrefabParent: 0
+--- !u!1001 &1057868505
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4122312895750262, guid: 9861c180b4e274d4f8ed8737161cfc49, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4122312895750262, guid: 9861c180b4e274d4f8ed8737161cfc49, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4122312895750262, guid: 9861c180b4e274d4f8ed8737161cfc49, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4122312895750262, guid: 9861c180b4e274d4f8ed8737161cfc49, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4122312895750262, guid: 9861c180b4e274d4f8ed8737161cfc49, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4122312895750262, guid: 9861c180b4e274d4f8ed8737161cfc49, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4122312895750262, guid: 9861c180b4e274d4f8ed8737161cfc49, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4122312895750262, guid: 9861c180b4e274d4f8ed8737161cfc49, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 9861c180b4e274d4f8ed8737161cfc49, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &1067780181 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4195542167520288, guid: 8b499700f5047714194747d8cea5c18d,
@@ -2800,6 +2842,12 @@ GameObject:
   m_PrefabParentObject: {fileID: 1539301293027614, guid: d6291fe617d31f84893633bc8a8e61c1,
     type: 2}
   m_PrefabInternal: {fileID: 1964117862}
+--- !u!114 &1182546015 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114076926331671678, guid: d6291fe617d31f84893633bc8a8e61c1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1964117862}
+  m_Script: {fileID: 11500000, guid: 8a15de3d5c014924b8f9c92b20d9a62e, type: 3}
 --- !u!1 &1192404704 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1063806102090254, guid: d6291fe617d31f84893633bc8a8e61c1,
@@ -3389,7 +3437,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1408765580}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1954436713}
+        m_MethodName: SpawnHealZone
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1408765580
@@ -4697,6 +4756,25 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 08c61fb4805739c488cdaf4fddc5d272, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1954436712 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1426299709640830, guid: cf235929a75ac2d43b562d79b93d7c06,
+    type: 2}
+  m_PrefabInternal: {fileID: 630867518}
+--- !u!114 &1954436713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1954436712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2f6bc0dcb6b77c4eb0ab4b3c43982cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healTile: {fileID: 1182546015}
+  HealZoneObject: {fileID: 1738656570588968, guid: 9861c180b4e274d4f8ed8737161cfc49,
+    type: 2}
 --- !u!1001 &1964117862
 Prefab:
   m_ObjectHideFlags: 0

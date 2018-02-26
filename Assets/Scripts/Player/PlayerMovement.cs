@@ -16,7 +16,6 @@ public class PlayerMovement : MonoBehaviour {
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
 
-
     void Start()
     {
         FindFirstTile();
@@ -98,4 +97,6 @@ public class PlayerMovement : MonoBehaviour {
         transform.position = finalTile.transform.position;
         currentTile = finalTile;
     }
+
+
 }
