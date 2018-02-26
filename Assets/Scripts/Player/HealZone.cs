@@ -13,7 +13,7 @@ public class HealZone : MonoBehaviour {
 
     private void DestroyHealDelayed()
     {
-        GameObject[] healToDestroy = GameObject.FindGameObjectsWithTag("HealZone");
+        GameObject[] healToDestroy = GameObject.FindGameObjectsWithTag("HealField");
         foreach (GameObject target in healToDestroy)
         {
             GameObject.Destroy(target, HDeleteTime);
