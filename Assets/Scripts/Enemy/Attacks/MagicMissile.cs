@@ -11,7 +11,6 @@ public class MagicMissile : MonoBehaviour {
     {
         GameObject bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 2f;
-        Debug.Log("Bullet");
         Destroy(bullet, 4);
     }
 }

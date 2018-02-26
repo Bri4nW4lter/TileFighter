@@ -518,7 +518,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1834070024}
+      - m_Target: {fileID: 1954436718}
         m_MethodName: ShootButton
         m_Mode: 1
         m_Arguments:
@@ -3428,10 +3428,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingTile: {fileID: 0}
   firstTile: {fileID: 0}
-  EnemySpeed: 0.35
-  defSpeed: 0
-  AttackSpeed: 2
-  BurstAttackSpeed: 7
+  enemySpeed: 0.35
   enemyFire: {fileID: 1849612551}
   enemyLightning: {fileID: 1849612550}
   enemyEarthSpike: {fileID: 1849612547}
@@ -4909,10 +4906,10 @@ MonoBehaviour:
   burst01:
   - {fileID: 1192404704}
   - {fileID: 1666737878}
+  - {fileID: 934746698}
   - {fileID: 2083019106}
-  - {fileID: 2083019106}
-  - {fileID: 2083019106}
-  - {fileID: 2083019106}
+  - {fileID: 1238770882}
+  - {fileID: 2022942227}
   burst02:
   - {fileID: 1696131343}
   - {fileID: 1182546014}
@@ -4920,10 +4917,10 @@ MonoBehaviour:
   burst03:
   - {fileID: 1666737878}
   - {fileID: 2022942227}
+  - {fileID: 1805970534}
+  - {fileID: 2083019106}
   - {fileID: 1696131343}
-  - {fileID: 1696131343}
-  - {fileID: 1696131343}
-  - {fileID: 1696131343}
+  - {fileID: 1192404704}
   burst04:
   - {fileID: 1238770882}
   - {fileID: 1182546014}
@@ -5265,6 +5262,20 @@ MonoBehaviour:
   HealZoneObject: {fileID: 1738656570588968, guid: 9861c180b4e274d4f8ed8737161cfc49,
     type: 2}
   healCharge: {fileID: 1406375418}
+--- !u!114 &1954436718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1954436712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db7d7ba366420f7438c2f50bcb303b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1723304574055168, guid: a0295bce770477c43badc7e5696752cf,
+    type: 2}
+  bulletSpawn: {fileID: 604860985}
 --- !u!1001 &1964117862
 Prefab:
   m_ObjectHideFlags: 0
