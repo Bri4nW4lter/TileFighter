@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,8 @@ public class HealthBar : MonoBehaviour {
     public Image currentHealthbar;
     private static float maxHealth = 100;
     private float health = maxHealth;
+    ChangeScene changeScene;
+
 
 
     private void Start()
@@ -25,7 +28,7 @@ public class HealthBar : MonoBehaviour {
     {
         if (health == 0)
         {
-            Time.timeScale = 0.00001f;
+            SceneManager.LoadScene("MenuScene");
         }
     }
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class BossHealth : MonoBehaviour {
@@ -32,7 +33,7 @@ public class BossHealth : MonoBehaviour {
     {
         if (health == 0)
         {
-            Time.timeScale = 0.00001f;
+            SceneManager.LoadScene("MenuScene");
         }
     }
 
