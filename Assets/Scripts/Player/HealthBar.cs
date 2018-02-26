@@ -53,7 +53,7 @@ public class HealthBar : MonoBehaviour {
     private void Heal(float damage)
     {
         health += damage;
-        if (health > 0)
+        if (health > maxHealth)
         {
             health = maxHealth;
         }
