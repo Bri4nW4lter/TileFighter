@@ -19,8 +19,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4569997663947592}
-  - component: {fileID: 114381428848024650}
   - component: {fileID: 54002313673710790}
+  - component: {fileID: 114923408139222098}
   m_Layer: 0
   m_Name: ChargeBullet
   m_TagString: Untagged
@@ -129,7 +129,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114381428848024650
+--- !u!114 &114923408139222098
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1524996341166520}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23d180f38d9ed554da17c4cd06f63e0b, type: 3}
+  m_Script: {fileID: 11500000, guid: 8dc2355b8ce6fef4884e8d182f2c7f2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isDamaging: 1

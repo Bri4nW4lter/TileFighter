@@ -2362,7 +2362,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1003283312}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1406375424}
+        m_MethodName: ChargeAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1003283312
@@ -2407,7 +2418,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: e52aac14d60082e47a97f24ff7c997ac, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.4
+      value: -0.62
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e52aac14d60082e47a97f24ff7c997ac, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4109,7 +4120,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4541946137598616, guid: 84cf4c32711f1634aa6cc75c88c8838f, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.121
       objectReference: {fileID: 0}
     - target: {fileID: 4541946137598616, guid: 84cf4c32711f1634aa6cc75c88c8838f, type: 2}
       propertyPath: m_LocalRotation.x
@@ -4348,7 +4359,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1849612548}
-  - component: {fileID: 1849612549}
   - component: {fileID: 1849612551}
   - component: {fileID: 1849612550}
   - component: {fileID: 1849612547}
@@ -4394,17 +4404,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1849612549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1849612546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d45b86ac5786ed342aec5e085fcf480b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1849612550
 MonoBehaviour:
   m_ObjectHideFlags: 0
