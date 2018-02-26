@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - LaserAttack
   - LaserWarning
+  - HealField
   layers:
   - Default
   - TransparentFX
