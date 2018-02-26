@@ -17,10 +17,23 @@ public class BossHealth : MonoBehaviour {
 
     }
 
+    private void Update()
+    {
+        Death();
+    }
+
     private void UpdateHealthbar()
     {
         float ratio = health / maxHealth;
         currentHealthbar.rectTransform.localScale = new Vector3(ratio, 1, 1);
+    }
+
+    void Death()
+    {
+        if (health == 0)
+        {
+            Time.timeScale = 0.00001f;
+        }
     }
 
 

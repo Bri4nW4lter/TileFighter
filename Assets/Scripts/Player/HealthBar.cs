@@ -16,6 +16,19 @@ public class HealthBar : MonoBehaviour {
 
     }
 
+    private void Update()
+    {
+        Death();
+    }
+
+    void Death()
+    {
+        if (health == 0)
+        {
+            Time.timeScale = 0.00001f;
+        }
+    }
+
     private void UpdateHealthbar()
     {
         float ratio = health / maxHealth;
