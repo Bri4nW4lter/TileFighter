@@ -37,7 +37,7 @@ public class EnemyAI : MonoBehaviour {
         FindFirstTile();
         defSpeed = EnemySpeed;
         StartCoroutine("Interval");
-        bossHealth.GetComponent<BossHealth>().health = stageHealth;
+        stageHealth = bossHealth.GetComponent<BossHealth>().health;
 
     }
 

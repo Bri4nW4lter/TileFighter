@@ -7,9 +7,19 @@ public class HealZone : MonoBehaviour {
     public TileScript healTile;
     private float HDeleteTime = 2.0f;
     public GameObject HealZoneObject;
-    private PlayerMovement playerMovement;
-    private Transform heal;
-   
+    public GameObject healCharge;
+    private float localCharge;
+
+    void Start()
+    {
+        localCharge = healCharge.GetComponent<ChargeScript>().charge; 
+    }
+
+    void Update()
+    {
+        localCharge = healCharge.GetComponent<ChargeScript>().charge;
+    }
+
 
     private void DestroyHealDelayed()
     {
@@ -22,11 +32,22 @@ public class HealZone : MonoBehaviour {
 
     public void SpawnHealZone()
     {
+        if(localCharge >= 5.0f)
+        {
+
+            Instantiate(HealZoneObject, healTile.transform.position, healTile.transform.rotation);
+            DestroyHealDelayed();
+            localCharge = 0;
+            healCharge.GetComponent<ChargeScript>().charge = localCharge ;
+            healCharge.GetComponent<ChargeScript>().UpdateChargeBar();
+        }
+
+
+    }
         
-        Instantiate(HealZoneObject, healTile.transform.position, healTile.transform.rotation);
-        DestroyHealDelayed();
+        
     }
     
 
 
-}
+

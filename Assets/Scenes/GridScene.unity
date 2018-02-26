@@ -3343,10 +3343,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1406375419}
-  - component: {fileID: 1406375420}
   - component: {fileID: 1406375423}
   - component: {fileID: 1406375422}
   - component: {fileID: 1406375421}
+  - component: {fileID: 1406375420}
   - component: {fileID: 1406375424}
   m_Layer: 0
   m_Name: Enemy
@@ -3451,7 +3451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentChargeBar: {fileID: 433010985}
-  maxCharge: 5
+  charge: 0
   chargePrefab: {fileID: 1524996341166520, guid: cf1578bb38269f44eb71fe3ee7347b6c,
     type: 2}
   chargeSpawn: {fileID: 604860985}
@@ -5264,6 +5264,7 @@ MonoBehaviour:
   healTile: {fileID: 1182546015}
   HealZoneObject: {fileID: 1738656570588968, guid: 9861c180b4e274d4f8ed8737161cfc49,
     type: 2}
+  healCharge: {fileID: 1406375418}
 --- !u!1001 &1964117862
 Prefab:
   m_ObjectHideFlags: 0

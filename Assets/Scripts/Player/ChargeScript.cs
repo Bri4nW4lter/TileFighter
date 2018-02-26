@@ -7,8 +7,8 @@ public class ChargeScript : MonoBehaviour {
 
     public Image currentChargeBar;
     private static float minCharge = 0;
-    private float charge = minCharge;
-    public float maxCharge = 5f;
+    public float charge = minCharge;
+    private float maxCharge = 5f;
     public GameObject chargePrefab;
     public Transform chargeSpawn;
 
@@ -44,7 +44,7 @@ public class ChargeScript : MonoBehaviour {
 
 
 
-    private void UpdateChargeBar()
+    public void UpdateChargeBar()
     {
         float ratio = (minCharge + charge) / maxCharge;
         currentChargeBar.rectTransform.localScale = new Vector3(ratio, 1, 1);
