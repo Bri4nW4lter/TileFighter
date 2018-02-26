@@ -14,4 +14,19 @@ public class ChangeScene : MonoBehaviour {
     {
         SceneManager.LoadScene("MenuScene");
     }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
+
+
+    public void QuitButton()
+    {
+        Application.Quit();
+    }
+
 }

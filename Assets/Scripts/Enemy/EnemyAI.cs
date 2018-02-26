@@ -67,7 +67,6 @@ public class EnemyAI : MonoBehaviour {
         while(true)
         {
             ResetSpeed();
-
             EnemyBehavior();
             yield return new WaitForSeconds(enemySpeed);
         }
@@ -100,12 +99,11 @@ public class EnemyAI : MonoBehaviour {
             stage = 3;
         }
 
-        if (stageHealth >= 100 && stageHealth <= 125)
+        if (stageHealth >= 100 && stageHealth < 125)
         {
             stage = 4;
         }
-
-        if (stageHealth >= 80 && stageHealth <= 100)
+        if (stageHealth < 100)
         {
             stage = 5;
         }
@@ -116,11 +114,10 @@ public class EnemyAI : MonoBehaviour {
         direction = Random.Range(0, 5);
 
         if (direction == 4)
-        {
-                       
+        {        
             enemySpeed = attackSpeed;
             attacks = Random.Range(0, stage);
-            
+
             if(attacks == 0)
             {
                 HatChangeColor(Color.magenta);
@@ -152,10 +149,7 @@ public class EnemyAI : MonoBehaviour {
                 burstAttack.BurstAttack();                  
             }
         }
-
         Move();
-        
-
     }
 
     private void Move()
