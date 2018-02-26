@@ -27,7 +27,7 @@ public class BossHealth : MonoBehaviour {
         currentHealthbar.rectTransform.localScale = new Vector3(ratio, 1, 1);
     }
 
-    void Death()
+    private void Death()
     {
         if (health == 0)
         {

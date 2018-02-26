@@ -11,12 +11,9 @@ public class BossBullet : MonoBehaviour {
     {
         if (col.tag == "Player")
         {
-            col.SendMessage((isDamaging) ? "TakeDamage" : "Heal", damage,SendMessageOptions.DontRequireReceiver);
+            col.SendMessage((isDamaging) ? "TakeDamage" : "Heal", damage, SendMessageOptions.DontRequireReceiver);
 
             Destroy(gameObject);
         }
-
-       
     }
-
 }

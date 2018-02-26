@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43877664, g: 0.48694026, b: 0.5672073, a: 1}
+  m_IndirectSpecularColor: {r: 0.43877694, g: 0.48694068, b: 0.5672079, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -4804,14 +4804,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91709b8dad202584eb1dc4a9eccddf78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CornerTiles:
+  cornerTiles:
   - {fileID: 1192404704}
   - {fileID: 2083019106}
   - {fileID: 1666737878}
   - {fileID: 2022942227}
-  EarthSpikeObject: {fileID: 1755469328448518, guid: f0cdd97a31883294bac8a75802e96236,
+  earthSpikeObject: {fileID: 1755469328448518, guid: f0cdd97a31883294bac8a75802e96236,
     type: 2}
-  EarthWarningObject: {fileID: 1645808667039450, guid: 410fc9b272bf69a4e8ac036bc9916d87,
+  earthWarningObject: {fileID: 1645808667039450, guid: 410fc9b272bf69a4e8ac036bc9916d87,
     type: 2}
 --- !u!4 &1849612548
 Transform:
@@ -4837,23 +4837,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64c1882f45d0e54abb24fa6d5d85706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LightningImpactZone01:
+  lightningImpactZone01:
   - {fileID: 1192404704}
   - {fileID: 934746698}
   - {fileID: 2083019106}
   - {fileID: 1696131343}
   - {fileID: 1182546014}
   - {fileID: 1805970534}
-  LightningImpactZone02:
+  lightningImpactZone02:
   - {fileID: 1696131343}
   - {fileID: 1182546014}
   - {fileID: 1805970534}
   - {fileID: 1666737878}
   - {fileID: 1238770882}
   - {fileID: 2022942227}
-  LightningObject: {fileID: 1503965998770368, guid: 1ff535cf2b1e8cb4ea80edffb7734a7f,
+  lightningObject: {fileID: 1503965998770368, guid: 1ff535cf2b1e8cb4ea80edffb7734a7f,
     type: 2}
-  LightningWarning: {fileID: 1645808667039450, guid: 6dec07aa7580c4f40b03d6cb5a7bedf9,
+  lightningWarning: {fileID: 1645808667039450, guid: 6dec07aa7580c4f40b03d6cb5a7bedf9,
     type: 2}
 --- !u!114 &1849612551
 MonoBehaviour:
@@ -4866,14 +4866,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 352bed7ea38a6a8489742764d0c1264a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CrossTiles:
+  crossTiles:
+  - {fileID: 934746698}
+  - {fileID: 1696131343}
   - {fileID: 1182546014}
   - {fileID: 1805970534}
-  - {fileID: 1696131343}
-  - {fileID: 934746698}
   - {fileID: 1238770882}
-  FireObject: {fileID: 1013985304468182, guid: 9822a7dad34b6a9479a6e252b4a91e00, type: 2}
-  FireWarningObject: {fileID: 1645808667039450, guid: aa10a1fc59f3d74468e9aaa0a3a2c553,
+  fireObject: {fileID: 1013985304468182, guid: 9822a7dad34b6a9479a6e252b4a91e00, type: 2}
+  fireWarningObject: {fileID: 1645808667039450, guid: aa10a1fc59f3d74468e9aaa0a3a2c553,
     type: 2}
 --- !u!114 &1849612552
 MonoBehaviour:
@@ -4900,35 +4900,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23a4e405c719f1a419efe9a876aa8627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HorizontalLaser: {fileID: 1882041511486298, guid: 5cf3af30da775c54087c4b87e9c08dab,
+  horizontalLaser: {fileID: 1882041511486298, guid: 5cf3af30da775c54087c4b87e9c08dab,
     type: 2}
-  VerticalLaser: {fileID: 1712026095824296, guid: cce6700c5372e084f97eaea0fe8f2d12,
+  verticalLaser: {fileID: 1712026095824296, guid: cce6700c5372e084f97eaea0fe8f2d12,
     type: 2}
-  BurstWarning: {fileID: 1645808667039450, guid: bb454f316d3ce444fa4665c7fcd40cc8,
+  burstWarning: {fileID: 1645808667039450, guid: bb454f316d3ce444fa4665c7fcd40cc8,
     type: 2}
-  Burst01:
+  burst01:
   - {fileID: 1192404704}
   - {fileID: 1666737878}
   - {fileID: 2083019106}
-  - {fileID: 934746698}
-  - {fileID: 1238770882}
-  - {fileID: 2022942227}
-  Burst02:
+  - {fileID: 2083019106}
+  - {fileID: 2083019106}
+  - {fileID: 2083019106}
+  burst02:
   - {fileID: 1696131343}
   - {fileID: 1182546014}
   - {fileID: 1805970534}
-  Burst03:
+  burst03:
   - {fileID: 1666737878}
   - {fileID: 2022942227}
   - {fileID: 1696131343}
-  - {fileID: 1192404704}
-  - {fileID: 2083019106}
-  - {fileID: 1805970534}
-  Burst04:
+  - {fileID: 1696131343}
+  - {fileID: 1696131343}
+  - {fileID: 1696131343}
+  burst04:
   - {fileID: 1238770882}
   - {fileID: 1182546014}
   - {fileID: 934746698}
-  Burst05:
+  burst05:
   - {fileID: 1192404704}
   - {fileID: 934746698}
   - {fileID: 2083019106}

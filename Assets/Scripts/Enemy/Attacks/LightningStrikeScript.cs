@@ -4,22 +4,20 @@ using UnityEngine;
 
 public class LightningStrikeScript : MonoBehaviour {
 
-
-
-    public GameObject[] LightningImpactZone01;
-    public GameObject[] LightningImpactZone02;
-    public GameObject LightningObject;
-    public GameObject LightningWarning;
-    private float LDelayTime = 0.7f;
-    private float WaitBetweenStrikes = 0.2f;
-    private float LDeleteTime = 0.2f;
+    public GameObject[] lightningImpactZone01;
+    public GameObject[] lightningImpactZone02;
+    public GameObject lightningObject;
+    public GameObject lightningWarning;
+    private float lDelayTime = 0.7f;
+    private float waitBetweenStrikes = 0.2f;
+    private float lDeleteTime = 0.2f;
 
     private void DestroyLightningDelayed()
     {
         GameObject[] lightningToDestroy = GameObject.FindGameObjectsWithTag("LightningAttack");
         foreach (GameObject target in lightningToDestroy)
         {
-            GameObject.Destroy(target, LDeleteTime);
+            GameObject.Destroy(target, lDeleteTime);
         }
     }
 
@@ -27,37 +25,34 @@ public class LightningStrikeScript : MonoBehaviour {
     {
         for (int i = 0; i < 6; i++)
         {
-            Instantiate(LightningWarning, LightningImpactZone01[i].transform.position, LightningImpactZone01[i].transform.rotation);
-
+            Instantiate(lightningWarning, lightningImpactZone01[i].transform.position, lightningImpactZone01[i].transform.rotation);
         }
-        Invoke("FirstStrike", LDelayTime);
+        Invoke("FirstStrike", lDelayTime);
     }
 
     void FirstStrike()
     {
         for (int i = 0; i < 6; i++)
         {
-            Instantiate(LightningObject, LightningImpactZone01[i].transform.position, LightningImpactZone01[i].transform.rotation);
+            Instantiate(lightningObject, lightningImpactZone01[i].transform.position, lightningImpactZone01[i].transform.rotation);
             DestroyLightningDelayed();
         }
-        Invoke("SecondStrikeWarning", WaitBetweenStrikes);
+        Invoke("SecondStrikeWarning", waitBetweenStrikes);
     }
     void SecondStrikeWarning()
     {
         for (int i = 0; i < 6; i++)
         {
-            Instantiate(LightningWarning, LightningImpactZone02[i].transform.position, LightningImpactZone02[i].transform.rotation);
-
+            Instantiate(lightningWarning, lightningImpactZone02[i].transform.position, lightningImpactZone02[i].transform.rotation);
         }
-        Invoke("SecondStrike", LDelayTime);
+        Invoke("SecondStrike", lDelayTime);
     }
     void SecondStrike()
     {
         for (int i = 0; i < 6; i++)
         {
-            Instantiate(LightningObject, LightningImpactZone02[i].transform.position, LightningImpactZone02[i].transform.rotation);
+            Instantiate(lightningObject, lightningImpactZone02[i].transform.position, lightningImpactZone02[i].transform.rotation);
             DestroyLightningDelayed();
         }
-
     }
 }

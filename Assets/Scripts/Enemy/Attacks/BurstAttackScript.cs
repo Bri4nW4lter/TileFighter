@@ -4,27 +4,27 @@ using UnityEngine;
 
 public class BurstAttackScript : MonoBehaviour {
 
-    public GameObject HorizontalLaser;
-    public GameObject VerticalLaser;
-    public GameObject BurstWarning;
-    public GameObject[] Burst01;
-    public GameObject[] Burst02;
-    public GameObject[] Burst03;
-    public GameObject[] Burst04;
-    public GameObject[] Burst05;
+    public GameObject horizontalLaser;
+    public GameObject verticalLaser;
+    public GameObject burstWarning;
+    public GameObject[] burst01;
+    public GameObject[] burst02;
+    public GameObject[] burst03;
+    public GameObject[] burst04;
+    public GameObject[] burst05;
 
-    private float BDelayTime = 0.4f;
-    private float WarningDeleteTime = 0.2f;
-    private float BDeleteTime = 0.7f;
-    private float WaitBetweenBursts = 0.6f;
-    private float FinaleDeleteTime = 1.1f;
+    private float bDelayTime = 0.4f;
+    private float warningDeleteTime = 0.2f;
+    private float bDeleteTime = 0.7f;
+    private float waitBetweenBursts = 0.6f;
+    private float finaleDeleteTime = 1.1f;
 
     private void DestroyWarningDelayed()
     {
         GameObject[] BurstToDestroy = GameObject.FindGameObjectsWithTag("LaserWarning");
         foreach (GameObject target in BurstToDestroy)
         {
-            GameObject.Destroy(target, WarningDeleteTime);
+            GameObject.Destroy(target, warningDeleteTime);
         }
     }
 
@@ -33,7 +33,7 @@ public class BurstAttackScript : MonoBehaviour {
         GameObject[] BurstToDestroy = GameObject.FindGameObjectsWithTag("LaserAttack");
         foreach (GameObject target in BurstToDestroy)
         {
-            GameObject.Destroy(target, BDeleteTime);
+            GameObject.Destroy(target, bDeleteTime);
         }
     }
 
@@ -42,7 +42,7 @@ public class BurstAttackScript : MonoBehaviour {
         GameObject[] FinaleToDestroy = GameObject.FindGameObjectsWithTag("LaserAttack");
         foreach (GameObject target in FinaleToDestroy)
         {
-            GameObject.Destroy(target, FinaleDeleteTime);
+            GameObject.Destroy(target, finaleDeleteTime);
         }
     }
 
@@ -51,20 +51,18 @@ public class BurstAttackScript : MonoBehaviour {
     {
         for (int i = 0; i < 6; i++)
         {
-            Instantiate(BurstWarning, Burst01[i].transform.position,Burst01[i].transform.rotation);
-
+            Instantiate(burstWarning, burst01[i].transform.position,burst01[i].transform.rotation);
         }
         DestroyWarningDelayed();
-        Invoke("FirstBurst", BDelayTime);
+        Invoke("FirstBurst", bDelayTime);
     }
 
     void FirstBurst()
-    {
-        
-        Instantiate(HorizontalLaser, Burst01[0].transform.position, Quaternion.Euler(0, 0, 0));
-        Instantiate(HorizontalLaser, Burst01[1].transform.position, Quaternion.Euler(0, 0, 0));
+    { 
+        Instantiate(horizontalLaser, burst01[0].transform.position, Quaternion.Euler(0, 0, 0));
+        Instantiate(horizontalLaser, burst01[1].transform.position, Quaternion.Euler(0, 0, 0));
         DestroyBurstDelayed();
-        Invoke("SecondWarning", WaitBetweenBursts);
+        Invoke("SecondWarning", waitBetweenBursts);
     }
 
 
@@ -73,18 +71,17 @@ public class BurstAttackScript : MonoBehaviour {
     {
         for (int i = 0; i < 3; i++)
         {
-            Instantiate(BurstWarning, Burst02[i].transform.position, Burst02[i].transform.rotation);
+            Instantiate(burstWarning, burst02[i].transform.position, burst02[i].transform.rotation);
             DestroyWarningDelayed();
         }
-        Invoke("SecondBurst", BDelayTime);
+        Invoke("SecondBurst", bDelayTime);
     }
 
     void SecondBurst()
     {
-        Instantiate(HorizontalLaser, Burst02[0].transform.position, Quaternion.Euler(0, 0, 0));
+        Instantiate(horizontalLaser, burst02[0].transform.position, Quaternion.Euler(0, 0, 0));
         DestroyBurstDelayed();
-        Invoke("ThirdWarning", WaitBetweenBursts);
-
+        Invoke("ThirdWarning", waitBetweenBursts);
     }
 
     //Wave3
@@ -92,21 +89,19 @@ public class BurstAttackScript : MonoBehaviour {
     {
         for (int i = 0; i < 6; i++)
         {
-            Instantiate(BurstWarning, Burst03[i].transform.position, Burst03[i].transform.rotation);
+            Instantiate(burstWarning, burst03[i].transform.position, burst03[i].transform.rotation);
 
         }
         DestroyWarningDelayed();
-        Invoke("ThirdBurst", BDelayTime);
-
+        Invoke("ThirdBurst", bDelayTime);
     }
 
     void ThirdBurst()
     {
-        Instantiate(HorizontalLaser, Burst03[0].transform.position, Quaternion.Euler(0, -90, 0));
-        Instantiate(HorizontalLaser, Burst03[1].transform.position, Quaternion.Euler(0, -90, 0));
+        Instantiate(horizontalLaser, burst03[0].transform.position, Quaternion.Euler(0, -90, 0));
+        Instantiate(horizontalLaser, burst03[1].transform.position, Quaternion.Euler(0, -90, 0));
         DestroyBurstDelayed();
-        Invoke("FourthWarning", WaitBetweenBursts);
-
+        Invoke("FourthWarning", waitBetweenBursts);
     }
 
     //Wave4
@@ -114,41 +109,35 @@ public class BurstAttackScript : MonoBehaviour {
     {
         for (int i = 0; i < 3; i++)
         {
-            Instantiate(BurstWarning, Burst04[i].transform.position, Burst04[i].transform.rotation);
-
+            Instantiate(burstWarning, burst04[i].transform.position, burst04[i].transform.rotation);
         }
         DestroyWarningDelayed();
-        Invoke("FourthBurst", BDelayTime);
-
+        Invoke("FourthBurst", bDelayTime);
     }
     void FourthBurst()
     {
-        Instantiate(HorizontalLaser, Burst04[0].transform.position, Quaternion.Euler(0, -90, 0));
+        Instantiate(horizontalLaser, burst04[0].transform.position, Quaternion.Euler(0, -90, 0));
         DestroyBurstDelayed();
-        Invoke("FinalWarning", WaitBetweenBursts);
-
+        Invoke("FinalWarning", waitBetweenBursts);
     }
+
     //Finish
     void FinalWarning()
     {
         for (int i = 0; i < 8; i++)
         {
-            Instantiate(BurstWarning, Burst05[i].transform.position, Burst05[i].transform.rotation);
+            Instantiate(burstWarning, burst05[i].transform.position, burst05[i].transform.rotation);
             DestroyWarningDelayed();
         }
-        Invoke("FinalBurst", BDelayTime);
-
+        Invoke("FinalBurst", bDelayTime);
     }
     void FinalBurst()
     {
         for (int i = 0; i < 8; i++)
         {
-            Instantiate(VerticalLaser, Burst05[i].transform.position, Burst05[i].transform.rotation);
+            Instantiate(verticalLaser, burst05[i].transform.position, burst05[i].transform.rotation);
             DestroyFinalDelayed();
-        }
-        
-
+        }  
     }
-
 }
 
