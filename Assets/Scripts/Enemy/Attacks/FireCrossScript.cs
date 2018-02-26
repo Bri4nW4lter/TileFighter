@@ -9,8 +9,8 @@ public class FireCrossScript : MonoBehaviour {
     public GameObject[] CrossTiles;
     public GameObject FireObject;
     public GameObject FireWarningObject;
-    public float FDeleteTime = 0.5f;
-    public float FDelayTime = 0.4f;
+    private float FDeleteTime = 0.5f;
+    private float FDelayTime = 0.4f;
 
     private void DestroyFireDelayed()
     {

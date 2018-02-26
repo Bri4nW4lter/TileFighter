@@ -1330,6 +1330,11 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 576310116}
+--- !u!4 &604860985 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4406534706795944, guid: cf235929a75ac2d43b562d79b93d7c06,
+    type: 2}
+  m_PrefabInternal: {fileID: 630867518}
 --- !u!1001 &616302745
 Prefab:
   m_ObjectHideFlags: 0
@@ -2793,7 +2798,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentChargeBar: {fileID: 433010985}
   maxCharge: 5
-  ChargeTiles: []
+  chargePrefab: {fileID: 1524996341166520, guid: cf1578bb38269f44eb71fe3ee7347b6c,
+    type: 2}
+  chargeSpawn: {fileID: 604860985}
 --- !u!1001 &1477961174
 Prefab:
   m_ObjectHideFlags: 0

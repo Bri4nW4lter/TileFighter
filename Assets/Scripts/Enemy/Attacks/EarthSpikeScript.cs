@@ -8,8 +8,8 @@ public class EarthSpikeScript : MonoBehaviour {
     public GameObject[] CornerTiles;
     public GameObject EarthSpikeObject;
     public GameObject EarthWarningObject;
-    public float EDeleteTime = 0.5f;
-    public float EDelayTime = 0.4f;
+    private float EDeleteTime = 0.5f;
+    private float EDelayTime = 0.4f;
 
     private void DestroyEarthDelayed()
     {
