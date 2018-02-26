@@ -41,6 +41,11 @@ public class PlayerMovement : MonoBehaviour {
         Destroy(bullet, 2);
     }
 
+    public void ShootButton()
+    {
+        Shoot();
+    }
+
     public void UpButton()
     {
         direction = 0;

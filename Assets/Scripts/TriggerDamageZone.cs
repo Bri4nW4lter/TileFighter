@@ -11,7 +11,7 @@ public class TriggerDamageZone : MonoBehaviour {
     {
         if (col.tag == "Player")
         {
-            col.SendMessage((isDamaging) ? "TakeDamage" : "Heal", damage);
+            col.SendMessage((isDamaging) ? "TakeDamage" : "Heal", damage, SendMessageOptions.DontRequireReceiver);
         }
     }
 }

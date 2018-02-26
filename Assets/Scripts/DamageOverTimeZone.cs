@@ -11,7 +11,7 @@ public class DamageOverTimeZone : MonoBehaviour {
     {
         if(col.tag == "Player")
         {
-            col.SendMessage((isDamaging) ? "TakeDamage" : "Heal", Time.deltaTime * damage);
+            col.SendMessage((isDamaging) ? "TakeDamage" : "Heal", Time.deltaTime * damage,SendMessageOptions.DontRequireReceiver);
         }
     }
 }
