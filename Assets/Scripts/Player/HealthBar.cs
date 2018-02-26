@@ -41,11 +41,9 @@ public class HealthBar : MonoBehaviour {
     private void TakeDamage(float damage)
     {
         health -= damage;
-        Debug.Log("taken Damage");
         if(health < 0)
         {
             health = 0;
-            Debug.Log("dead");
         }
         UpdateHealthbar();
     }

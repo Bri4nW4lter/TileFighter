@@ -13,10 +13,10 @@ public class EnemyAI : MonoBehaviour {
     TileScript currentTile;
     int direction;
     int attacks;
-    public float EnemySpeed = 0.4f;
-    public float defSpeed;
-    public float AttackSpeed = 1.0f;
-    public float BurstAttackSpeed = 2.0f;
+    public float enemySpeed = 0.35f;
+    private float defSpeed;
+    private float attackSpeed = 2.0f;
+    private float burstAttackSpeed = 7.0f;
     public FireCrossScript enemyFire;
     public LightningStrikeScript enemyLightning;
     public EarthSpikeScript enemyEarthSpike;
@@ -24,7 +24,7 @@ public class EnemyAI : MonoBehaviour {
     public BurstAttackScript burstAttack;
     public Material hatMaterial;
     public GameObject bossHealth;
-    private float stageHealth=200;
+    private float stageHealth;
     
    
 
@@ -35,14 +35,11 @@ public class EnemyAI : MonoBehaviour {
         GetComponent<EarthSpikeScript>();
         GetComponent<MagicMissile>();
         FindFirstTile();
-        defSpeed = EnemySpeed;
+        defSpeed = enemySpeed;
         StartCoroutine("Interval");
         stageHealth = bossHealth.GetComponent<BossHealth>().health;
 
     }
-
-
-  
 
      void FindFirstTile()
     {
@@ -59,9 +56,10 @@ public class EnemyAI : MonoBehaviour {
 
     void ResetSpeed()
     {
-        EnemySpeed = defSpeed;
+        enemySpeed = defSpeed;
     }
 
+    //How often Boss Moves
     IEnumerator Interval()
     {
         yield return new WaitForSeconds(0.5f);
@@ -71,7 +69,7 @@ public class EnemyAI : MonoBehaviour {
             ResetSpeed();
 
             EnemyBehavior();
-            yield return new WaitForSeconds(EnemySpeed);
+            yield return new WaitForSeconds(enemySpeed);
         }
     }
 
@@ -85,47 +83,53 @@ public class EnemyAI : MonoBehaviour {
 
     void EnemyBehavior()
     {
-        int stage=2;
+
+        // Set Stage depending on Boss Health
+        int stage =1;
+
         if (stageHealth >= 175)
         {
-            stage = 2;
+            stage = 1;
         }
         if (stageHealth >= 150 && stageHealth < 175)
         {
-            stage = 3;
+            stage = 2;
         }
         if (stageHealth >= 125 && stageHealth < 150)
         {
-            stage = 4;
+            stage = 3;
         }
 
         if (stageHealth >= 100 && stageHealth <= 125)
         {
+            stage = 4;
+        }
+
+        if (stageHealth >= 80 && stageHealth <= 100)
+        {
             stage = 5;
         }
 
-        Debug.Log(stage);
 
+        //Choose to move in which direction or to attack 
 
         direction = Random.Range(0, 5);
 
         if (direction == 4)
         {
                        
-            EnemySpeed = AttackSpeed;
+            enemySpeed = attackSpeed;
             attacks = Random.Range(0, stage);
             
             if(attacks == 0)
             {
                 HatChangeColor(Color.magenta);
-                Debug.Log("Attack!");
                 magicMissile.Attack();
             }
 
             if(attacks == 1)
             {
                 HatChangeColor(Color.red);
-                Debug.Log("FireCrossAttack!");
                 enemyFire.FireCross();
             }
 
@@ -133,21 +137,18 @@ public class EnemyAI : MonoBehaviour {
             {
                 HatChangeColor(Color.cyan);
                 enemyLightning.LightningStrike();
-                Debug.Log("LightningStrike!");
             }
 
             if (attacks == 3)
             {
                 HatChangeColor(Color.grey);
-                Debug.Log("EarthSpike!");
                 enemyEarthSpike.EarthSpike();
             }
 
             if (attacks == 4)
             {
                 HatChangeColor(Color.white);
-                Debug.Log("LaserBurst!");
-                EnemySpeed = BurstAttackSpeed;                      // boss needs to cooldown --> player can do lot of damage after heavy attack
+                enemySpeed = burstAttackSpeed;                      // boss needs to cooldown --> player can do lot of damage after heavy attack
                 burstAttack.BurstAttack();                  
             }
         }
@@ -169,7 +170,7 @@ public class EnemyAI : MonoBehaviour {
         }
         else
         {
-            finalTile = currentTile.NextTiles[direction];       //direction: 0 = up,    1=down,   2=left,   3=right     4=stand still to attack
+            finalTile = currentTile.NextTiles[direction];       //directions: 0 = up,    1=down,   2=left,   3=right     4=stand still to attack
         }
 
         if (finalTile == null)
