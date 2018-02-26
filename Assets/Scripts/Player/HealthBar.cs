@@ -28,7 +28,7 @@ public class HealthBar : MonoBehaviour {
     {
         if (health == 0)
         {
-            SceneManager.LoadScene("MenuScene");
+            SceneManager.LoadScene("GameOverScene");
         }
     }
 
