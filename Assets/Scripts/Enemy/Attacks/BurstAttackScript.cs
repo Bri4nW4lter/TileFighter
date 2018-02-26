@@ -13,11 +13,11 @@ public class BurstAttackScript : MonoBehaviour {
     public GameObject[] Burst04;
     public GameObject[] Burst05;
 
-    public float BDelayTime = 0.4f;
-    public float WarningDeleteTime = 0.2f;
-    public float BDeleteTime = 0.7f;
-    public float WaitBetweenBursts = 0.6f;
-    public float FinaleDeleteTime = 1.1f;
+    private float BDelayTime = 0.4f;
+    private float WarningDeleteTime = 0.2f;
+    private float BDeleteTime = 0.7f;
+    private float WaitBetweenBursts = 0.6f;
+    private float FinaleDeleteTime = 1.1f;
 
     private void DestroyWarningDelayed()
     {

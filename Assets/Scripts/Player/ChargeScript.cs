@@ -9,7 +9,8 @@ public class ChargeScript : MonoBehaviour {
     private static float minCharge = 0;
     private float charge = minCharge;
     public float maxCharge = 5f;
-    public TileScript[] ChargeTiles;
+    public GameObject chargePrefab;
+    public Transform chargeSpawn;
 
     // Use this for initialization
     void Start () {
@@ -30,7 +31,11 @@ public class ChargeScript : MonoBehaviour {
         {
             Debug.Log("pew");
 
-            //chargeattack
+            GameObject chargeBullet = (GameObject)Instantiate(chargePrefab, chargeSpawn.position, chargeSpawn.rotation);
+
+            Debug.Log("2");
+            chargeBullet.GetComponent<Rigidbody>().velocity = chargeBullet.transform.forward * 3f;
+            Destroy(chargeBullet, 5);
             charge = 0;
             UpdateChargeBar();
         }

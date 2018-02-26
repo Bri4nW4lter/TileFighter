@@ -10,9 +10,9 @@ public class LightningStrikeScript : MonoBehaviour {
     public GameObject[] LightningImpactZone02;
     public GameObject LightningObject;
     public GameObject LightningWarning;
-    public float LDelayTime = 0.7f;
-    public float WaitBetweenStrikes = 0.2f;
-    public float LDeleteTime = 0.2f;
+    private float LDelayTime = 0.7f;
+    private float WaitBetweenStrikes = 0.2f;
+    private float LDeleteTime = 0.2f;
 
     private void DestroyLightningDelayed()
     {
